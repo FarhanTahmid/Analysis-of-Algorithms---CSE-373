@@ -1,10 +1,11 @@
 def schedule_jobs(jobs):
-    # sort the jobs in descending order of their profit
+    
+    # sorting the jobs in descending order based on their profit
     jobs = sorted(jobs, key=lambda x: x[2], reverse=True)
     
-    # initialize the boolean array indicating whether a slot is available or not
-    n = max(jobs, key=lambda x: x[1])[1]
-    slots = [True] * n
+    # initialize the boolean array which indicates whether a slot is available or not to perform a task
+    maximumDeadline = max(jobs, key=lambda x: x[1])[1]
+    slots = [True] * maximumDeadline
     
     # initialize the total profit and the sequence of jobs
     total_profit = 0
