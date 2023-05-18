@@ -40,6 +40,6 @@ def job_scheduling(jobs):
   # Return the output list.
   return output
 
-jobs = [("Job A", 2, 6), ("Job B", 6, 4), ("Job C", 7, 2), ("Job D", 1, 5), ("Job E", 5, 11)]
+jobs = [("Job A", 2, 6), ("Job B", 6, 22), ("Job C", 7, 2), ("Job D", 1, 5), ("Job E", 5, 11)]
 
 print(job_scheduling(jobs))
