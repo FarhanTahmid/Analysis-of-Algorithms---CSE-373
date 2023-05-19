@@ -27,13 +27,14 @@ def jobSchedulingWithDynamicProgramming(jobs):
     jobs.sort(key=getJobProfit, reverse=True)
 
     
-    # getting the maximum deadline
-    maxDeadline = max(jobs, key=getJobDeadline)[1]  
-    dynamic = [0] * (maxDeadline+1)
+    # getting the maximum deadline of jobs
+    maximumDeadline = max(jobs, key=getJobDeadline)[1]
+    #define a dynamic array for bottom up process  
+    dynamic = [0] * (maximumDeadline+1)
     #createing job sequence with max deadline
-    jobSequence = [''] * (maxDeadline+1)
+    jobSequence = [''] * (maximumDeadline+1)
 
-    # Traverse through jobs
+    # Traverse through the jobs at first in bottom up approach
     for job in jobs:
         deadline = job[1]
         profit = job[2]
@@ -42,19 +43,19 @@ def jobSchedulingWithDynamicProgramming(jobs):
         while deadline > 0 and dynamic[deadline] != 0:
             deadline -= 1
 
-        # Update dp and job_sequence lists
+        # Update dynamic array and jobSequence lists to sort the jobs in order
         if deadline > 0:
             dynamic[deadline] = profit
             jobSequence[deadline] = job[0]
 
-    # Find the maximum profit and corresponding job sequence
-    maxProfit = sum(dynamic)
-    maxJobSequence = []
+    # Find the maximum profit and the corresponding job sequence that will be performed seuentially
+    maximumProfit = sum(dynamic)
+    maximumJobSequence = []
     for job in jobSequence:
         if job != '':
-            maxJobSequence.append(job)
+            maximumJobSequence.append(job)
 
-    return maxProfit, maxJobSequence
+    return maximumProfit, maximumJobSequence
 
 def resultOfAlgorithm(numberOfJobs,timeRequired):
     #plotting the graph
