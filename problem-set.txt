@@ -1,14 +1,6 @@
 The job scheduling problem is a well-known problem in computer science and operations research. 
-The problem involves scheduling a set of jobs on a set of machines in such a way as to minimize the total completion time, or some other objective function. 
+The problem involves scheduling a set of jobs containing deadline and profits from it in such a way as to minimize the total completion time on deadline. 
 The problem is usually formulated as follows:
 
-Given a set of jobs J = {1,2,...,n}, where each job j has a processing time p_j, 
-and a set of m machines M = {1,2,...,m}, the goal is to find a schedule S that assigns each job to a machine and specifies the starting time for each job on its assigned machine, 
-subject to the following constraints:
-
-1)Each job can only be assigned to one machine.
-2)Each machine can only process one job at a time.
-3)The processing time for a job is the same on any machine.
-
-There are different objective functions that can be optimized, such as minimizing the makespan (i.e., the maximum completion time over all machines) or the total completion time (i.e., the sum of completion times over all jobs). 
-The job scheduling problem is an important problem in many industries, such as manufacturing, logistics, and service industries, and has many practical applications.
+Given a set of jobs J = {'job_id',deadline,profit}, where each job j has a deadline and a profit, 
+The goal is to find a sequence of jobs which will maximize the profit.
