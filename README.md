@@ -2,8 +2,11 @@
 
 # Introduction
 The job scheduling problem is a well-known problem in computer science and operations research. The issue involves scheduling a set of jobs containing a deadline and profits from it in such a way as to minimize the total completion time on the deadline. 
+
 The problem is usually formulated as follows:
+
 Given a set of jobs J = {jobid, deadline, profit}, each job j has a deadline and a profit. In our project, we randomly generated jobs with maximum and minimum values.
+
 Our goal here is to find a sequence of jobs that will maximize the profit. We used Three different approaches to solve this Algorithm: Greedy Algorithm, Brute Force, and Dynamic Programming Algorithm.
 
 # Analysis of Algorithms:
